@@ -1,13 +1,13 @@
 <?php
 session_start();
 
-// Проверяем, авторизован ли пользователь
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.html");
     exit();
 }
 
-// Подключение к базе данных
+
 $conn = new mysqli('localhost', 'root', '', 'cldestore');
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
